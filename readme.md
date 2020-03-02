@@ -990,3 +990,37 @@ Change the {{ login_form }} to
 
 '{{ login_form | as_bootstrap }}
 '
+
+# Custom CSS Code
+
+Create in top level folder
+
+Folder called 'static'
+in that folder, create another one called 'css'
+
+and in that one create a file called 'styles.css'
+
+## base.html
+
+At the top of the file add the code '{% load staticfiles %}' above the html tag.
+
+Add the following code to just below the HEAD Tag
+
+<!-- Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+
+## settings.py
+
+Add the following code to just a LINE below STATIC_URL
+'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+'
+
+## styles.css
+
+'form {
+    width: 50%;
+}'
