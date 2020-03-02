@@ -945,3 +945,48 @@ Add some classes to the nav and ul
 Also move the H1 down below the Navbar.
 
 
+# Bootstrapping Forms
+
+Use 'sudo pip3 install django_forms_bootstrap'
+
+to install custom django forms for bootstrap.
+
+## settings.py
+
+Add the following LINE to INSTALLED_APPS
+
+'
+'django_forms_bootstrap',
+'
+
+## registration.html
+
+Add this block to just after the extends base.html block
+
+'{% load bootstrap_tags%}'
+
+Add a class to the submit button
+
+'<button type="submit" class="btn btn-default">Register
+    </button>'
+
+Change the {{ registration_form}} to
+
+'{{ registration_form | as_bootstrap }}
+'
+
+## login.html
+
+Add this block to just after the extends base.html block
+
+'{% load bootstrap_tags%}'
+
+Add a class to the submit button
+
+'<button type="submit" class="btn btn-default">Login
+    </button>'
+
+Change the {{ login_form }} to
+
+'{{ login_form | as_bootstrap }}
+'
